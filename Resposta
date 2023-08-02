@@ -1,0 +1,25 @@
+function verificarCofre(senha, digitada) {
+  let senhaIndex = 0;
+
+  for (let i = 0; i < digitada.length; i++) {
+    if (digitada[i] === senha[senhaIndex]) {
+      senhaIndex++;
+    }
+    
+    if (senhaIndex === senha.length) {
+      return "SIM";
+    }
+  }
+
+  return "NAO";
+}
+
+function processData(input) {
+  const linhas = input.trim().split("\n");
+  const senha = linhas[0];
+  const digitada = linhas[1];
+
+  const resultado = verificarCofre(senha, digitada);
+  console.log(resultado);
+}
+  
